@@ -10,12 +10,13 @@ const sharedRules = {
   'no-debugger': isProduction ? 'error' : 'warn',
   'no-unused-vars': 'warn',
   '@typescript-eslint/no-unused-vars': 'warn',
-  'indent': ['warn', 2]
+  'indent': ['warn', 2],
+  'no-trailing-spaces': 'error'
 }
 
 export default [
   {
-    ignores: ['.nuxt', 'dist', 'node_modules', '.git', '*.d.ts']
+    ignores: ['.nuxt', '.output', 'dist', 'node_modules', '.git', '*.d.ts']
   },
   {
     files: ['**/*.vue'],
@@ -35,7 +36,19 @@ export default [
       ...sharedRules,
       'indent': 'off',
       'vue/html-indent': ['warn', 2],
-      'vue/script-indent': ['warn', 2, { baseIndent: 0 }]
+      'vue/script-indent': ['warn', 2, { baseIndent: 0 }],
+      'vue/max-attributes-per-line': ['error', {
+        singleline: 1,
+        multiline: 1
+      }],
+      'vue/first-attribute-linebreak': ['error', {
+        singleline: 'beside',
+        multiline: 'below'
+      }],
+      'vue/html-closing-bracket-newline': ['error', {
+        singleline: 'never',
+        multiline: 'always'
+      }]
     }
   },
   {

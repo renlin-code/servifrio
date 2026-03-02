@@ -25,3 +25,6 @@ logs
 
 #Lint
 .eslintcache
+
+# VSCode settings
+.vscode
