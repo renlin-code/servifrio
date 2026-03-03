@@ -92,7 +92,7 @@ const btnClasses = computed(() => ({
 
   /* Sizes */
   &--sm {
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1.2rem;
   }
 
   &--md {
@@ -113,11 +113,9 @@ const btnClasses = computed(() => ({
     &:hover:not(:disabled) {
       background: linear-gradient(135deg, rgba($color_primary, 0.3), rgba($color_primary, 0.2));
       box-shadow: 0 0 20px rgba($color_primary, 0.9);
-      transform: translateY(-2px);
     }
 
     &:active:not(:disabled) {
-      transform: translateY(0);
       box-shadow: 0 0 15px rgba($color_primary, 0.7);
     }
   }
@@ -162,10 +160,12 @@ const btnClasses = computed(() => ({
 
     &:hover:not(:disabled) {
       background: rgba($color_primary, 0.1);
+      box-shadow: 0 0 20px rgba($color_primary, 0.9);
     }
 
     &:active:not(:disabled) {
       background: rgba($color_primary, 0.2);
+      box-shadow: 0 0 15px rgba($color_primary, 0.7);
     }
   }
 

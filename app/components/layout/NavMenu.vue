@@ -88,7 +88,7 @@ onMounted(() => {
     gap: 30px;
     align-items: center;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $bp_md) {
       position: fixed;
       top: 76px;
       right: 0;
@@ -111,7 +111,7 @@ onMounted(() => {
   }
 
   a {
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: $bp_md) {
       font-size: 1.25rem;
     }
   }
@@ -128,7 +128,7 @@ onMounted(() => {
   z-index: 1001;
   transition: transform 0.3s ease;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: $bp_md) {
     display: flex;
   }
 
@@ -160,7 +160,7 @@ onMounted(() => {
 .menu-overlay {
   display: none;
 
-  @media (max-width: 768px) {
+  @media (max-width: $bp_md) {
     display: block;
     position: fixed;
     top: 76px;
