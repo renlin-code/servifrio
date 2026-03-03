@@ -37,7 +37,7 @@
     color: $color_gray;
     font-size: 1.2rem;
     max-width: 600px;
-    margin: 0 auto 30px;
+    margin: 0 auto 50px;
   }
 }
 </style>

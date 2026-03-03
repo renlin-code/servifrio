@@ -1,68 +1,96 @@
-import tsParser from '@typescript-eslint/parser'
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import vueParser from 'vue-eslint-parser'
-import vuePlugin from 'eslint-plugin-vue'
+import tsParser from "@typescript-eslint/parser";
+import tsPlugin from "@typescript-eslint/eslint-plugin";
+import vueParser from "vue-eslint-parser";
+import vuePlugin from "eslint-plugin-vue";
 
-const isProduction = process.env.NODE_ENV === 'production'
+const isProduction = process.env.NODE_ENV === "production";
 
 const sharedRules = {
-  'no-console': isProduction ? 'error' : 'warn',
-  'no-debugger': isProduction ? 'error' : 'warn',
-  'no-unused-vars': 'warn',
-  '@typescript-eslint/no-unused-vars': 'warn',
-  'indent': ['warn', 2],
-  'no-trailing-spaces': 'error'
-}
+  "no-console": isProduction ? "error" : "warn",
+  "no-debugger": isProduction ? "error" : "warn",
+  "no-unused-vars": "warn",
+  "@typescript-eslint/no-unused-vars": "warn",
+  indent: ["warn", 2],
+  "no-trailing-spaces": "error",
+};
 
 export default [
   {
-    ignores: ['.nuxt', '.output', 'dist', 'node_modules', '.git', '*.d.ts']
+    ignores: [".nuxt", ".output", "dist", "node_modules", ".git", "*.d.ts"],
   },
   {
-    files: ['**/*.vue'],
+    files: ["**/*.vue"],
     languageOptions: {
       parser: vueParser,
       parserOptions: {
         parser: tsParser,
-        ecmaVersion: 'latest',
-        sourceType: 'module'
-      }
+        ecmaVersion: "latest",
+        sourceType: "module",
+      },
     },
     plugins: {
-      '@typescript-eslint': tsPlugin,
-      'vue': vuePlugin
+      "@typescript-eslint": tsPlugin,
+      vue: vuePlugin,
     },
     rules: {
       ...sharedRules,
-      'indent': 'off',
-      'vue/html-indent': ['warn', 2],
-      'vue/script-indent': ['warn', 2, { baseIndent: 0 }],
-      'vue/max-attributes-per-line': ['error', {
-        singleline: 1,
-        multiline: 1
-      }],
-      'vue/first-attribute-linebreak': ['error', {
-        singleline: 'beside',
-        multiline: 'below'
-      }],
-      'vue/html-closing-bracket-newline': ['error', {
-        singleline: 'never',
-        multiline: 'always'
-      }]
-    }
+      indent: "off",
+      "vue/html-indent": ["warn", 2],
+      "vue/script-indent": ["warn", 2, { baseIndent: 0 }],
+      "vue/max-attributes-per-line": [
+        "error",
+        {
+          singleline: 1,
+          multiline: 1,
+        },
+      ],
+      "vue/first-attribute-linebreak": [
+        "error",
+        {
+          singleline: "beside",
+          multiline: "below",
+        },
+      ],
+      "vue/html-closing-bracket-newline": [
+        "error",
+        {
+          singleline: "never",
+          multiline: "always",
+        },
+      ],
+      "vue/attributes-order": [
+        "error",
+        {
+          order: [
+            "DEFINITION",
+            "LIST_RENDERING",
+            "CONDITIONALS",
+            "RENDER_MODIFIERS",
+            ["UNIQUE", "SLOT"],
+            "TWO_WAY_BINDING",
+            "OTHER_DIRECTIVES",
+            "ATTR_STATIC",
+            "ATTR_DYNAMIC",
+            "ATTR_SHORTHAND_BOOL",
+            "GLOBAL",
+            "EVENTS",
+            "CONTENT",
+          ],
+          alphabetical: false,
+        },
+      ],
+    },
   },
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    files: ["**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     languageOptions: {
       parser: tsParser,
-      ecmaVersion: 'latest',
-      sourceType: 'module'
+      ecmaVersion: "latest",
+      sourceType: "module",
     },
     plugins: {
-      '@typescript-eslint': tsPlugin
+      "@typescript-eslint": tsPlugin,
     },
-    rules: sharedRules
-  }
-]
-
-
+    rules: sharedRules,
+  },
+];

@@ -2,9 +2,9 @@
   <nav class="nav-menu">
     <button
       class="burger-btn"
+      aria-label="Toggle menu"
       :class="{ 'is-open': isOpen }"
       @click="toggleMenu"
-      aria-label="Toggle menu"
     >
       <span class="burger-line"></span>
       <span class="burger-line"></span>
@@ -17,19 +17,19 @@
     >
       <li>
         <UiLink
-          to="#inicio"
+          to="/"
           @click="closeMenu"
         >Início</UiLink>
       </li>
       <li>
         <UiLink
-          to="#servicos"
+          to="#services"
           @click="closeMenu"
         >Serviços</UiLink>
       </li>
       <li>
         <UiLink
-          to="#area-atuacao"
+          to="#work-area"
           @click="closeMenu"
         >Atuação</UiLink>
       </li>
@@ -38,7 +38,7 @@
         <UiButton
           variant="outline"
           size="sm"
-          to="/contacto"
+          to="#contacts"
           rounded
           @click="closeMenu"
         >Contacto</UiButton>

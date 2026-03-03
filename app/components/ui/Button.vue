@@ -1,8 +1,8 @@
 <template>
   <NuxtLink
     v-if="to && !to.startsWith('#')"
-    :to="to"
     class="btn"
+    :to="to"
     :class="btnClasses"
     v-bind="$attrs"
   >
@@ -10,8 +10,8 @@
   </NuxtLink>
   <a
     v-else-if="to"
-    :href="to"
     class="btn"
+    :href="to"
     :class="btnClasses"
     v-bind="$attrs"
   >
@@ -19,12 +19,12 @@
   </a>
   <button
     v-else
-    :type="type"
     class="btn"
+    :type="type"
     :class="btnClasses"
     :disabled="disabled"
-    @click="$emit('click')"
     v-bind="$attrs"
+    @click="$emit('click')"
   >
     <slot />
   </button>
