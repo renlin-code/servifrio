@@ -18,6 +18,39 @@ body {
     background-color: $color_bg-dark;
 }
 
+.fs-2xs {
+    font-size: 0.8rem;
+}
+
+.fs-xs {
+    font-size: 0.875rem;
+}
+
+.fs-sm {
+    font-size: 0.9rem;
+}
+
+.fs-base {
+    font-size: 1rem;
+}
+
+.fs-md {
+    font-size: 1.1rem;
+}
+
+.fs-lg {
+    font-size: 1.125rem;
+}
+
+.fs-xl {
+    font-size: 1.25rem;
+}
+
+.fs-2xl {
+    font-size: 1.5rem;
+}
+
+
 .app-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -29,4 +62,5 @@ h2,
 h3 {
     font-family: $font-family_heading;
     text-transform: uppercase;
+    font-weight: 600;
 }

@@ -54,28 +54,28 @@
 </template>
 
 <script setup lang="ts">
-const isOpen = ref(false)
+const isOpen = ref(false);
 
 const toggleMenu = () => {
-  isOpen.value = !isOpen.value
-}
+  isOpen.value = !isOpen.value;
+};
 
 const closeMenu = () => {
-  isOpen.value = false
-}
+  isOpen.value = false;
+};
 
 onMounted(() => {
   const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === 'Escape' && isOpen.value) {
-      closeMenu()
+    if (e.key === "Escape" && isOpen.value) {
+      closeMenu();
     }
-  }
-  window.addEventListener('keydown', handleEscape)
+  };
+  window.addEventListener("keydown", handleEscape);
 
   onUnmounted(() => {
-    window.removeEventListener('keydown', handleEscape)
-  })
-})
+    window.removeEventListener("keydown", handleEscape);
+  });
+});
 </script>
 
 <style scoped lang="scss">
@@ -107,10 +107,12 @@ onMounted(() => {
       &.is-open {
         transform: translateX(0);
       }
+    }
+  }
 
-      a {
-        font-size: 1.25rem;
-      }
+  a {
+    @media screen and (max-width: 768px) {
+      font-size: 1.25rem;
     }
   }
 }

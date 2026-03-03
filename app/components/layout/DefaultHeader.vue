@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__container app-container">
-      <div class="logo">
+      <div class="logo fs-2xl">
         LOGO
       </div>
       <LayoutNavMenu />
@@ -11,7 +11,7 @@
 
 <style scoped lang="scss">
 .header {
-  background-color: rgba($color_black, 0.95);
+  background-color: rgba($color_bg-dark, 0.95);
   padding: 15px 0;
   position: fixed;
   width: 100%;
@@ -28,7 +28,6 @@
 }
 
 .logo {
-  font-size: 1.5rem;
   font-weight: bold;
   color: $color_white;
 }

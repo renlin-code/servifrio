@@ -60,6 +60,9 @@ const btnClasses = computed(() => ({
   'btn--sm': props.size === 'sm',
   'btn--md': props.size === 'md',
   'btn--lg': props.size === 'lg',
+  'fs-xs': props.size === 'sm',
+  'fs-base': props.size === 'md',
+  'fs-lg': props.size === 'lg',
   'btn--full': props.fullWidth,
   'btn--rounded': props.rounded,
   'btn--disabled': props.disabled
@@ -90,17 +93,14 @@ const btnClasses = computed(() => ({
   /* Sizes */
   &--sm {
     padding: 0.5rem 1rem;
-    font-size: 0.875rem;
   }
 
   &--md {
     padding: 0.75rem 1.5rem;
-    font-size: 1rem;
   }
 
   &--lg {
     padding: 1rem 2rem;
-    font-size: 1.125rem;
   }
 
   /* Variants - Primary (Default) */

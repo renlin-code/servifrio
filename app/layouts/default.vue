@@ -17,4 +17,8 @@
   display: flex;
   flex-direction: column;
 }
+.main {
+  flex: 1;
+  padding-top: 76px;
+}
 </style>

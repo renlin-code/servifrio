@@ -4,7 +4,10 @@ import ESLintPlugin from '@nabla/vite-plugin-eslint'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  css: ['~/assets/scss/main.scss'],
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    '~/assets/scss/main.scss'
+  ],
   vite: {
     css: {
       preprocessorOptions: {
