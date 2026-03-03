@@ -1,5 +1,8 @@
 <template>
-  <header class="header">
+  <header
+    class="header"
+    :class="{ 'header--hidden': !isHeaderVisible }"
+  >
     <div class="header__container app-container">
       <div class="logo fs-2xl">
         LOGO
@@ -9,6 +12,38 @@
   </header>
 </template>
 
+<script setup lang="ts">
+const isHeaderVisible = ref(true)
+let lastScrollY = 0
+
+const handleScroll = () => {
+  const currentScrollY = window.scrollY
+
+  if (currentScrollY <= 0) {
+    isHeaderVisible.value = true
+    lastScrollY = 0
+    return
+  }
+
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
+    isHeaderVisible.value = false
+  } else {
+    isHeaderVisible.value = true
+  }
+
+  lastScrollY = currentScrollY
+}
+
+onMounted(() => {
+  lastScrollY = window.scrollY
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
 <style scoped lang="scss">
 .header {
   background-color: rgba($color_bg-dark, 0.95);
@@ -16,8 +51,14 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 2000;
   border-bottom: 1px solid rgba($color_primary, 0.1);
+  transition: transform 0.4s ease;
+  will-change: transform;
+
+  &--hidden {
+    transform: translateY(-100%);
+  }
 
   &__container {
     display: flex;

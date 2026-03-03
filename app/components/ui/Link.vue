@@ -1,16 +1,16 @@
 <template>
   <NuxtLink
     v-if="to && !to.startsWith('#')"
-    :to="to"
     class="link"
+    :to="to"
     v-bind="$attrs"
   >
     <slot />
   </NuxtLink>
   <a
     v-else
-    :href="to"
     class="link"
+    :href="to"
     v-bind="$attrs"
   >
     <slot />
