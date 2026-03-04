@@ -15,45 +15,40 @@
       class="nav-menu__links nav-links"
       :class="{ 'is-open': isOpen }"
     >
-      <li>
+      <li
+        v-for="(link, index) in links"
+        :key="index"
+      >
         <UiLink
-          to="/"
+          v-if="!link.isButton"
+          :to="link.to"
           @click="closeMenu"
-        >Início</UiLink>
-      </li>
-      <li>
-        <UiLink
-          to="#services"
-          @click="closeMenu"
-        >Serviços</UiLink>
-      </li>
-      <li>
-        <UiLink
-          to="#work-area"
-          @click="closeMenu"
-        >Atuação</UiLink>
-      </li>
+        >
+          {{ link.name }}
+        </UiLink>
 
-      <li>
         <UiButton
+          v-else
           variant="outline"
           size="sm"
-          to="#contacts"
+          :to="link.to"
           rounded
           @click="closeMenu"
-        >Contacto</UiButton>
+        >
+          {{ link.name }}
+        </UiButton>
       </li>
     </ul>
-
-    <div
-      v-if="isOpen"
-      class="menu-overlay"
-      @click="closeMenu"
-    ></div>
   </nav>
 </template>
 
 <script setup lang="ts">
+const links = [
+  { name: 'Início', to: '/', isButton: false },
+  { name: 'Serviços', to: '#services', isButton: false },
+  { name: 'Atuação', to: '#work-area', isButton: false },
+  { name: 'Contacto', to: '#contacts', isButton: true },
+]
 const isOpen = ref(false);
 
 const toggleMenu = () => {
