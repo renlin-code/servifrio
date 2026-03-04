@@ -64,17 +64,16 @@ const closeMenu = () => {
   isOpen.value = false;
 };
 
-onMounted(() => {
-  const handleEscape = (e: KeyboardEvent) => {
-    if (e.key === "Escape" && isOpen.value) {
-      closeMenu();
-    }
-  };
-  window.addEventListener("keydown", handleEscape);
+watch(isOpen, (newValue) => {
+  if (newValue) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+});
 
-  onUnmounted(() => {
-    window.removeEventListener("keydown", handleEscape);
-  });
+onUnmounted(() => {
+  document.body.style.overflow = '';
 });
 </script>
 
