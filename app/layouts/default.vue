@@ -3,6 +3,7 @@
     <LayoutDefaultHeader />
     <main class="main">
       <slot />
+      <UiWhatsappFloat showOnScroll />
     </main>
     <LayoutDefaultFooter />
   </div>
