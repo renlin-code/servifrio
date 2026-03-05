@@ -10,7 +10,7 @@
           lng: -48.5987023
         }"
         :zoom="10"
-        :radius-km="29"
+        :radius-km="30"
       />
       <template #fallback>
         <UiSkeleton height="450px" />
