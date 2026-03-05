@@ -7,17 +7,16 @@
 
 <script setup lang="ts">
 interface Props {
-  lat?: number
-  lng?: number
+  coordinates: {
+    lat: number
+    lng: number
+  }
+  radiusKm: number
   zoom?: number
-  radiusKm?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  lat: -27.5954,
-  lng: -48.5480,
   zoom: 13,
-  radiusKm: 2
 })
 
 const mapContainer = ref<HTMLElement | null>(null)
@@ -38,7 +37,7 @@ onMounted(async () => {
   if (!mapContainer.value) return
 
   // Initialize the map
-  const map = L.map(mapContainer.value).setView([props.lat, props.lng], props.zoom)
+  const map = L.map(mapContainer.value).setView([props.coordinates.lat, props.coordinates.lng], props.zoom)
 
   // Add tile layer (OpenStreetMap)
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -47,7 +46,7 @@ onMounted(async () => {
   }).addTo(map)
 
   // Add coverage area circle
-  L.circle([props.lat, props.lng], {
+  L.circle([props.coordinates.lat, props.coordinates.lng], {
     color: '#00f2ff',
     fillColor: '#00f2ff',
     fillOpacity: 0.3,
@@ -55,8 +54,8 @@ onMounted(async () => {
   }).addTo(map)
 
   // Add marker at the center
-  L.marker([props.lat, props.lng]).addTo(map)
-    .bindPopup('Centro de operaciones')
+  L.marker([props.coordinates.lat, props.coordinates.lng]).addTo(map)
+    .bindPopup('Área de Atuação')
 })
 </script>
 

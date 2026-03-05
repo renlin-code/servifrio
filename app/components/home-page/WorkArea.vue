@@ -5,10 +5,12 @@
   >
     <ClientOnly>
       <CommonWorkAreaMap
-        :lat="-27.5954"
-        :lng="-48.5480"
-        :zoom="13"
-        :radius-km="2"
+        :coordinates="{
+          lat: -27.6014016,
+          lng: -48.5987023
+        }"
+        :zoom="10"
+        :radius-km="29"
       />
       <template #fallback>
         <UiSkeleton height="450px" />

@@ -4,11 +4,11 @@
     id="contacts"
   >
     <div class="app-container footer__container">
-      <div class="footer__col">
+      <!-- <div class="footer__col">
         <h3 class="footer__col-item fs-md">Endereço</h3>
         <p class="footer__col-item fs-sm">Rua Exemplo, 123</p>
         <p class="footer__col-item fs-sm">Florianópolis, SC</p>
-      </div>
+      </div> -->
       <div class="footer__col">
         <h3 class="footer__col-item fs-md">Horário</h3>
         <p class="footer__col-item fs-sm">Seg - Sex: 08:00 - 18:00</p>

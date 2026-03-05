@@ -4,9 +4,9 @@
     :class="{ 'header--hidden': !isHeaderVisible }"
   >
     <div class="header__container app-container">
-      <div class="logo fs-2xl">
-        LOGO
-      </div>
+      <NuxtLink to="/">
+        <CommonLogo class="header__logo" />
+      </NuxtLink>
       <LayoutNavMenu />
     </div>
   </header>
@@ -66,10 +66,10 @@ onBeforeUnmount(() => {
     align-items: center;
     height: 45px;
   }
-}
 
-.logo {
-  font-weight: bold;
-  color: $color_white;
+  &__logo {
+    width: 200px;
+    height: auto;
+  }
 }
 </style>
