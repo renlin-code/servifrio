@@ -40,8 +40,8 @@ const services = [
     icon: "tools",
   },
   {
-    title: "Carga de Gás",
-    description: "Detecção de vazamentos e recarga de gás refrigerante ecológica.",
+    title: "Refrigeração comercial",
+    description: "Manutenção preventiva e conserto de balcões, expositores verticais e ilhas.",
     icon: "temperature-low",
   },
 ];
